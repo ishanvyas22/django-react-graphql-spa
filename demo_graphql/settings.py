@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -37,10 +38,31 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'django_extensions', # New! (useful extension)
+    'graphene_django',   # New! (for graphql communication)
+    'corsheaders',       # New! (for cors request in dev env)
+    'items'              # ---> New! (make our app will active)
 ]
+
+# New
+# for improved interactive shell
+# add this
+SHELL_PLUS = "ipython"
+
+# allow webpack development server to make cross-request
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:8080',
+    'http://0.0.0.0:8080',
+)
+
+GRAPHENE = {
+    'SCHEMA': 'gql.schema.schema'
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -54,7 +76,7 @@ ROOT_URLCONF = 'demo_graphql.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': (os.path.join(BASE_DIR, 'templates'),),
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -66,6 +88,10 @@ TEMPLATES = [
         },
     },
 ]
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 WSGI_APPLICATION = 'demo_graphql.wsgi.application'
 
