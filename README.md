@@ -36,3 +36,4 @@ Go to http://0.0.0.0:8080/graphql
 
 - https://dzone.com/articles/django-graphql-react-integration-tutorial-part-1
 - https://dzone.com/articles/django-react-integration-with-graphql-part-2
+- https://dzone.com/articles/django-react-integration-with-graphql-part-3
