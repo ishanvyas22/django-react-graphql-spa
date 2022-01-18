@@ -28,6 +28,10 @@ docker run -it -p 8080:8080 -v ~/Sites/ishanvyas22/djngo-react-graphql-spa:/app 
 docker exec -it <container_ID_or_name> /bin/bash
 ```
 
+#### Open GraphiQL (Interactive GraphQL Playground):
+
+Go to http://0.0.0.0:8080/graphql
+
 ## Reference
 
 - https://dzone.com/articles/django-graphql-react-integration-tutorial-part-1
