@@ -5,7 +5,7 @@ backcall==0.2.0
 black==21.12b0
 click==8.0.3
 decorator==5.1.1
-Django==4.0.1
+Django==4.1.10
 django-cors-headers==3.11.0
 django-extensions==3.1.5
 executing==0.8.2
