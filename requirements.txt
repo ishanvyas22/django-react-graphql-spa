@@ -26,7 +26,7 @@ promise==2.3
 prompt-toolkit==3.0.24
 ptyprocess==0.7.0
 pure-eval==0.2.1
-Pygments==2.11.2
+Pygments==2.15.0
 Rx==1.6.1
 singledispatch==3.7.0
 six==1.16.0
